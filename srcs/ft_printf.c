@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/ft_printf.h"
+#include <stdio.h>
 
 int ft_printf(const char *str, ...)
 {
@@ -32,5 +33,6 @@ int ft_printf(const char *str, ...)
 
 int main(void)
 {
-    int i = ft_printf("dfdd sddssd sdsdsds %i", 458794);
+    float i = 2.5;
+    ft_printf("%i", i);
 }
