@@ -17,7 +17,7 @@ void    ft_flags(char c, va_list args, int *i)
         *i += ft_printchar(va_arg(args, int));
     else if (c == 's')
         *i += ft_printstr(va_arg(args, char *));
-    else if (c == 'i')
+    else if (c == 'i' || c == 'd')
         *i += ft_printint(va_arg(args, int));
     else if (c == '%')
         *i += ft_printchar('%');

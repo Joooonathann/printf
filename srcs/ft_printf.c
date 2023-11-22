@@ -33,6 +33,6 @@ int ft_printf(const char *str, ...)
 
 int main(void)
 {
-	char *name = "Linda";
+	char *name = "Jooo";
 	ft_printf("Coucou %s", name);
 }
