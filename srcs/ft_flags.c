@@ -21,6 +21,8 @@ void	ft_flags(char c, va_list args, int *i)
 		*i += ft_printptr(va_arg(args, void *));
 	else if (c == 'i' || c == 'd')
 		*i += ft_printint(va_arg(args, int));
+	else if (c == 'u')
+		*i += ft_printunsigned(va_arg(args, unsigned int));
 	else if (c == '%')
 		*i += ft_printchar('%');
 }

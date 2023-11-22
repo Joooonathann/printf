@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printunsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:26:32 by jalbiser          #+#    #+#             */
-/*   Updated: 2023/11/22 12:50:23 by jalbiser         ###   ########.fr       */
+/*   Created: 2023/11/21 14:21:33 by jalbiser          #+#    #+#             */
+/*   Updated: 2023/11/22 15:30:34 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
-int	ft_printf(const char *str, ...)
+static unsigned int	ft_putnbr_unsigned(unsigned int n)
 {
-	va_list	args;
-	int		i;
-
-	i = 0;
-	va_start(args, str);
-	while (*str)
-	{
-		if (*str == '%')
-			ft_flags(*++str, args, &i);
-		else
-			i += ft_printchar(*str);
-		*str++;
-	}
-	va_end(args);
-	return (i);
+	if (n > 9)
+		ft_putnbr_unsigned(n / 10);
+	ft_putchar_fd(n % 10 + '0', 1);
 }
 
-int main()
+static int	ft_count(long i)
 {
-	ft_printf("%u", 937364);
-	return 0;
+	unsigned int	a;
+
+	a = 0;
+	if (i == 0)
+		return (1);
+	while (i > 0)
+	{
+		i /= 10;
+		a++;
+	}
+	return (a);
+}
+
+int	ft_printunsigned(int i)
+{
+	ft_putnbr_unsigned(i);
+	return (ft_count(i));
 }
