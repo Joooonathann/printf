@@ -6,13 +6,13 @@
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:40:27 by jalbiser          #+#    #+#             */
-/*   Updated: 2023/11/21 13:40:30 by jalbiser         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:48:18 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/ft_printf.h"
 
-int ft_printchar(int c)
+int	ft_printchar(int c)
 {
-    ft_putchar_fd(c, 1);
-    return (1);
+	ft_putchar_fd(c, 1);
+	return (1);
 }
