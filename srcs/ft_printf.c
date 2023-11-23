@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *str, ...)
 {
@@ -29,11 +28,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (i);
-}
-
-int main()
-{
-	ft_printf("Le resultat est le suivant: %x\n", 937364);
-	printf("Le resultat est le suivant: %x\n", 937364);
-	return 0;
 }

@@ -21,7 +21,7 @@ void	ft_flags(char c, va_list args, int *i);
 int		ft_printchar(int c);
 int		ft_printstr(char *str);
 int		ft_printint(int i);
-int		ft_printptr(void *ptr);
+unsigned long long	ft_printptr(unsigned long long ptr);
 int     ft_printunsigned(int i);
 unsigned int ft_printhexadecimal(unsigned int n);
 

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../includes/ft_printf.h"
 
-static unsigned int	ft_putnbr_unsigned(unsigned int n)
+static void	ft_putnbr_unsigned(unsigned int n)
 {
 	if (n > 9)
 		ft_putnbr_unsigned(n / 10);

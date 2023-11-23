@@ -11,7 +11,43 @@
 /* ************************************************************************** */
 #include "../includes/ft_printf.h"
 
-int	ft_printptr(void *ptr)
+static unsigned long long   ft_count(unsigned long long ptr)
 {
+    unsigned long long count;
     
+    count = 0;
+    if (ptr == 0)
+        return 1;
+
+    while (ptr != 0)
+    {
+        ptr /= 10;
+        count++;
+    }
+    return (count);
+}
+
+static void  ft_recu(unsigned long long ptr, char hex[16])
+{
+    if (ptr != 0)
+	{
+		ft_recu((ptr / 16), hex);
+		ft_putchar_fd(hex[ptr % 16], 1);
+	}
+}
+
+unsigned long long  ft_printptr(unsigned long long ptr)
+{
+    char			hex[16] = "0123456789abcdef";
+    unsigned long long  len;
+
+    len = ft_count(ptr);
+    if (ptr == 0)
+    {
+        write(1, "(nil)", 5);
+        return (5);
+    }
+    ft_putstr_fd("0x", 1);
+    ft_recu(ptr, hex);
+    return (len + 2);
 }

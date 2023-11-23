@@ -36,8 +36,9 @@ static void	ft_recu(unsigned int n, char hex[16])
 unsigned int ft_printhexadecimal(unsigned int n)
 {
 	char			hex[16] = "0123456789abcdef";
-	unsigned int	len = ft_count(n);
+	unsigned int	len;
 
+	len = ft_count(n);
 	if (n == 0)
 	{
 		ft_putchar_fd('0', 1);
