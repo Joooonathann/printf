@@ -9,7 +9,7 @@
 /*   Updated: 2023/11/22 15:30:34 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/ft_printf.h"
+#include "../include/ft_printf.h"
 
 static void	ft_putnbr_unsigned(unsigned int n)
 {

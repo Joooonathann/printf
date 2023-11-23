@@ -9,7 +9,7 @@
 /*   Updated: 2023/11/22 16:41:36 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/ft_printf.h"
+#include "../include/ft_printf.h"
 
 static unsigned long long   ft_count(unsigned long long ptr)
 {

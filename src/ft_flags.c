@@ -9,7 +9,7 @@
 /*   Updated: 2023/11/22 14:59:51 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/ft_printf.h"
+#include "../include/ft_printf.h"
 
 void	ft_flags(char c, va_list args, int *i)
 {

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhexadecimal.c                              :+:      :+:    :+:   */
+/*   ft_printint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,41 +9,30 @@
 /*   Updated: 2023/11/22 15:30:34 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/ft_printf.h"
+#include "../include/ft_printf.h"
 
-static unsigned int	ft_count(unsigned int n)
+static int	ft_count(long i)
 {
-	unsigned int	count;
+	int	a;
 
-	count = 0;
-	while (n != 0)
-	{
-		n /= 16;
-		count++;
-	}
-	return (count);
-}
-
-static void	ft_recu(unsigned int n, char hex[16])
-{
-	if (n != 0)
-	{
-		ft_recu((n / 16), hex);
-		ft_putchar_fd(hex[n % 16], 1);
-	}
-}
-
-unsigned int ft_printhexadecimal(unsigned int n)
-{
-	char			hex[16] = "0123456789abcdef";
-	unsigned int	len;
-
-	len = ft_count(n);
-	if (n == 0)
-	{
-		ft_putchar_fd('0', 1);
+	a = 0;
+	if (i == 0)
 		return (1);
+	if (i < 0)
+	{
+		a++;
+		i = -i;
 	}
-	ft_recu(n, hex);
-	return (len);
+	while (i > 0)
+	{
+		i /= 10;
+		a++;
+	}
+	return (a);
+}
+
+int	ft_printint(int i)
+{
+	ft_putnbr_fd(i, 1);
+	return (ft_count(i));
 }
