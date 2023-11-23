@@ -21,7 +21,7 @@ static unsigned long long   ft_count(unsigned long long ptr)
 
     while (ptr != 0)
     {
-        ptr /= 10;
+        ptr /= 16;
         count++;
     }
     return (count);
