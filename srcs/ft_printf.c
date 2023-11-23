@@ -25,7 +25,7 @@ int	ft_printf(const char *str, ...)
 			ft_flags(*++str, args, &i);
 		else
 			i += ft_printchar(*str);
-		*str++;
+		str++;
 	}
 	va_end(args);
 	return (i);
@@ -33,6 +33,7 @@ int	ft_printf(const char *str, ...)
 
 int main()
 {
-	ft_printf("%u", 937364);
+	ft_printf("Le resultat est le suivant: %x\n", 937364);
+	printf("Le resultat est le suivant: %x\n", 937364);
 	return 0;
 }

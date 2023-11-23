@@ -23,5 +23,6 @@ int		ft_printstr(char *str);
 int		ft_printint(int i);
 int		ft_printptr(void *ptr);
 int     ft_printunsigned(int i);
+unsigned int ft_printhexadecimal(unsigned int n);
 
 #endif

@@ -13,5 +13,5 @@
 
 int	ft_printptr(void *ptr)
 {
-	
+    
 }
