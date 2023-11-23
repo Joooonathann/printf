@@ -13,8 +13,8 @@
 
 static unsigned long long   ft_count(unsigned long long ptr)
 {
-    unsigned long long count;
-    
+    unsigned long long  count;
+
     count = 0;
     if (ptr == 0)
         return 1;
@@ -27,7 +27,7 @@ static unsigned long long   ft_count(unsigned long long ptr)
     return (count);
 }
 
-static void  ft_recu(unsigned long long ptr, char hex[16])
+static void ft_recu(unsigned long long ptr, char hex[16])
 {
     if (ptr != 0)
 	{
@@ -38,9 +38,10 @@ static void  ft_recu(unsigned long long ptr, char hex[16])
 
 unsigned long long  ft_printptr(unsigned long long ptr)
 {
-    char			hex[16] = "0123456789abcdef";
+    char			hex[16];
     unsigned long long  len;
 
+    hex[16] = "0123456789abcdef";
     len = ft_count(ptr);
     if (ptr == 0)
     {

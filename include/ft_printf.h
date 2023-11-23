@@ -16,13 +16,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int		ft_printf(const char *str, ...);
-void	ft_flags(char c, va_list args, int *i);
-int		ft_printchar(int c);
-int		ft_printstr(char *str);
-int		ft_printint(int i);
+int					ft_printf(const char *str, ...);
+void				ft_flags(char c, va_list args, int *i);
+int					ft_printchar(int c);
+int					ft_printstr(char *str);
+int					ft_printint(int i);
 unsigned long long	ft_printptr(unsigned long long ptr);
-unsigned int	ft_printunsigned(unsigned int i);
-unsigned int ft_printhexadecimal(unsigned int n, int size);
+unsigned int		ft_printunsigned(unsigned int i);
+unsigned int		ft_printhexadecimal(unsigned int n, int size);
 
 #endif
