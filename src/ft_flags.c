@@ -23,8 +23,10 @@ void	ft_flags(char c, va_list args, int *i)
 		*i += ft_printint(va_arg(args, int));
 	else if (c == 'u')
 		*i += ft_printunsigned(va_arg(args, unsigned int));
-	else if (c == 'x' || c == 'X')
-		*i += ft_printhexadecimal(va_arg(args, unsigned int));
+	else if (c == 'x')
+		*i += ft_printhexadecimal(va_arg(args, unsigned int), 0);
+	else if (c == 'X')
+		*i += ft_printhexadecimal(va_arg(args, unsigned int), 1);
 	else if (c == '%')
 		*i += ft_printchar('%');
 }

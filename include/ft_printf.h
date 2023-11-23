@@ -22,7 +22,7 @@ int		ft_printchar(int c);
 int		ft_printstr(char *str);
 int		ft_printint(int i);
 unsigned long long	ft_printptr(unsigned long long ptr);
-int     ft_printunsigned(int i);
-unsigned int ft_printhexadecimal(unsigned int n);
+unsigned int	ft_printunsigned(unsigned int i);
+unsigned int ft_printhexadecimal(unsigned int n, int size);
 
 #endif

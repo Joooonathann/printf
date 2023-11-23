@@ -18,14 +18,14 @@ static void	ft_putnbr_unsigned(unsigned int n)
 	ft_putchar_fd(n % 10 + '0', 1);
 }
 
-static int	ft_count(long i)
+static unsigned int	ft_count(unsigned int i)
 {
 	unsigned int	a;
 
 	a = 0;
 	if (i == 0)
 		return (1);
-	while (i > 0)
+	while (i != 0)
 	{
 		i /= 10;
 		a++;
@@ -33,7 +33,7 @@ static int	ft_count(long i)
 	return (a);
 }
 
-int	ft_printunsigned(int i)
+unsigned int	ft_printunsigned(unsigned int i)
 {
 	ft_putnbr_unsigned(i);
 	return (ft_count(i));
