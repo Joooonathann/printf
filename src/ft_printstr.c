@@ -13,11 +13,18 @@
 
 int	ft_printstr(char *str)
 {
+	int	i;
+
+	i = 0;
 	if (!str)
 	{
-		write(1, "(null)", 6);
+		ft_printstr("(null)");
 		return (6);
 	}
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
+	while (str[i] != '\0')
+	{
+		ft_printchar(str[i]);
+		i++;
+	}
+	return (i);
 }

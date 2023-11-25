@@ -31,14 +31,14 @@ static void	ft_recu(unsigned long long ptr, char *hex)
 	if (ptr != 0)
 	{
 		ft_recu((ptr / 16), hex);
-		ft_putchar_fd(hex[ptr % 16], 1);
+		ft_printchar(hex[ptr % 16]);
 	}
 }
 
 unsigned long long	ft_printptr(unsigned long long ptr)
 {
-	unsigned long long 	len;
-	char			*hex;
+	unsigned long long	len;
+	char				*hex;
 
 	hex = "0123456789abcdef";
 	len = ft_count(ptr);
@@ -47,7 +47,7 @@ unsigned long long	ft_printptr(unsigned long long ptr)
 		write(1, "(nil)", 5);
 		return (5);
 	}
-	ft_putstr_fd("0x", 1);
+	ft_printstr("0x");
 	ft_recu(ptr, hex);
 	return (len + 2);
 }

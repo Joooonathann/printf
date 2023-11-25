@@ -15,7 +15,7 @@ static void	ft_putnbr_unsigned(unsigned int n)
 {
 	if (n > 9)
 		ft_putnbr_unsigned(n / 10);
-	ft_putchar_fd(n % 10 + '0', 1);
+	ft_printchar(n % 10 + '0');
 }
 
 static unsigned int	ft_count(unsigned int i)

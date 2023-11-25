@@ -29,7 +29,7 @@ static void	ft_recu(unsigned int n, char *hex)
 	if (n != 0)
 	{
 		ft_recu((n / 16), hex);
-		ft_putchar_fd(hex[n % 16], 1);
+		ft_printchar(hex[n % 16]);
 	}
 }
 
@@ -44,7 +44,7 @@ unsigned int	ft_printhexadecimal(unsigned int n, int size)
 	len = ft_count(n);
 	if (n == 0)
 	{
-		ft_putchar_fd('0', 1);
+		ft_printchar('0');
 		return (1);
 	}
 	if (size == 0)
