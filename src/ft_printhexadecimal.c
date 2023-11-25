@@ -24,7 +24,7 @@ static unsigned int	ft_count(unsigned int n)
 	return (count);
 }
 
-static void	ft_recu(unsigned int n, char hex[16])
+static void	ft_recu(unsigned int n, char *hex)
 {
 	if (n != 0)
 	{
@@ -35,12 +35,12 @@ static void	ft_recu(unsigned int n, char hex[16])
 
 unsigned int	ft_printhexadecimal(unsigned int n, int size)
 {
-	char			hex_min[16];
-	char			hex_max[16];
+	char			*hex_min;
+	char			*hex_max;
 	unsigned int	len;
 
-	hex_min[16] = "0123456789abcdef";
-	hex_max[16] = "0123456789ABCDEF";
+	hex_min = "0123456789abcdef";
+	hex_max = "0123456789ABCDEF";
 	len = ft_count(n);
 	if (n == 0)
 	{

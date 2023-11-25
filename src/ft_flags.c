@@ -19,7 +19,7 @@ void	ft_flags(char c, va_list args, int *i)
 		*i += ft_printstr(va_arg(args, char *));
 	else if (c == 'p')
 		*i += ft_printptr(va_arg(args, unsigned long long));
-	else if (c == 'i' || c == 'd')
+	else if (c == 'i')
 		*i += ft_printint(va_arg(args, int));
 	else if (c == 'u')
 		*i += ft_printunsigned(va_arg(args, unsigned int));
