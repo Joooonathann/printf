@@ -29,4 +29,6 @@ void	ft_flags(char c, va_list args, int *i)
 		*i += ft_printhexadecimal(va_arg(args, unsigned int), 1);
 	else if (c == '%')
 		*i += ft_printchar('%');
+	else
+		*i += ft_printchar('%') + ft_printchar(c);
 }
