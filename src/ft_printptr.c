@@ -44,8 +44,8 @@ unsigned long long	ft_printptr(unsigned long long ptr)
 	len = ft_count(ptr);
 	if (ptr == 0)
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		ft_printstr("0x0");
+		return (3);
 	}
 	ft_printstr("0x");
 	ft_recu(ptr, hex);
