@@ -13,9 +13,7 @@ NAME = 				libftprintf.a
 CC = 				gcc
 CFLAGS = 			-Wall -Wextra -Werror
 MAKEFLAGS +=		--silent
-LIBFT_DIR = 		libft
 PRINTF_SRC_DIR = 	src
-MAKE_LIBFT =		@make -C $(LIBFT_DIR)
 
 SRC_PRINTF = 		ft_flags.c\
 					ft_printchar.c\
@@ -33,19 +31,15 @@ all: 				$(NAME)
 
 $(NAME): 			$(OBJ_PRINTF)
 					@echo "\n🕒 Compilation en cours de $(NAME)...\n"
-					$(MAKE_LIBFT) all
-					ar rcs $(NAME) $(OBJ_PRINTF) libft/*.o
+					ar rcs $(NAME) $(OBJ_PRINTF)
 					@echo "\n✅ \033[0;32mCompilation de $(NAME) effectué\033[0m\n"
 
 clean:
 					rm -f $(PRINTF_SRC_DIR)/*.o
-					$(MAKE_LIBFT) clean
 
 fclean: 			clean
 					rm -f $(NAME)
-					$(MAKE_LIBFT) fclean
 
 re: 				fclean all
-					$(MAKE_LIBFT) re
 
 .PHONY: 			all clean fclean re
