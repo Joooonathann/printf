@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printunsigned.c                                 :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 14:21:33 by jalbiser          #+#    #+#             */
-/*   Updated: 2023/11/22 15:30:34 by jalbiser         ###   ########.fr       */
+/*   Created: 2023/12/01 05:21:57 by jalbiser          #+#    #+#             */
+/*   Updated: 2023/12/01 05:23:30 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/ft_printf.h"
 
-static void	ft_putnbr_unsigned(unsigned int n)
+int	ft_printf(const char *format, ...)
 {
-	if (n > 9)
-		ft_putnbr_unsigned(n / 10);
-	ft_printchar(n % 10 + '0');
-}
+	va_list	args;
+	int		i;
 
-static unsigned int	ft_count(unsigned int i)
-{
-	unsigned int	a;
-
-	a = 0;
-	if (i == 0)
-		return (1);
-	while (i != 0)
+	i = 0;
+	va_start(args, str);
+	while (*str)
 	{
-		i /= 10;
-		a++;
+		if (*str == '%')
+			ft_flags(*++str, args, &i);
+		else
+			i += ft_printchar(*str);
+		str++;
 	}
-	return (a);
-}
-
-unsigned int	ft_printunsigned(unsigned int i)
-{
-	ft_putnbr_unsigned(i);
-	return (ft_count(i));
+	va_end(args);
+	return (i);
 }

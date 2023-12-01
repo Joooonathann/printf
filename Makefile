@@ -6,23 +6,16 @@
 #    By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 14:50:01 by jalbiser          #+#    #+#              #
-#    Updated: 2023/11/25 14:50:05 by jalbiser         ###   ########.fr        #
+#    Updated: 2023/12/01 05:22:45 by jalbiser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = 				libftprintf.a
 CC = 				gcc
 CFLAGS = 			-Wall -Wextra -Werror
 MAKEFLAGS +=		--silent
-PRINTF_SRC_DIR = 	src
+PRINTF_SRC_DIR = 	srcs
 
-SRC_PRINTF = 		ft_flags.c\
-					ft_printchar.c\
-					ft_printf.c\
-					ft_printhexadecimal.c\
-					ft_printint.c\
-					ft_printptr.c\
-					ft_printstr.c\
-					ft_printunsigned.c
+SRC_PRINTF = 		ft_printf.c\
 
 OBJ_PRINTF =		$(addprefix $(PRINTF_SRC_DIR)/, $(SRC_PRINTF:.c=.o))
 
