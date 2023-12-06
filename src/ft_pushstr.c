@@ -11,11 +11,16 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_pushstr(char *str, Node *stock)
+t_node	*ft_pushstr(char *str, t_node *stock)
 {
+	if (!str)
+	{
+		stock = ft_pushstr("(null)", stock);
+		return (stock);
+	}
 	while (*str)
 	{
-		stock = createNode(*str, stock);
+		stock = createt_node(*str, stock);
 		str++;
 	}
 	return (stock);

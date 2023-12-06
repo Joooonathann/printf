@@ -13,14 +13,14 @@
 
 int	ft_printf(const char *format, ...)
 {
-	Node	*list;
+	t_node	*list;
 	va_list	args;
 	int		count;
-	
+
 	va_start(args, format);
 	list = ft_stock(format, args);
 	va_end(args);
 	count = ft_printlist(list);
-	ft_freeStock(list);
+	ft_freestock(list);
 	return (count);
 }

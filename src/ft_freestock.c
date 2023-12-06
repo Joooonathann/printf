@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	ft_freeStock(Node *stock)
+void	ft_freestock(t_node *stock)
 {
-    Node    *current;
-    Node    *tmp;
+	t_node	*current;
+	t_node	*next;
 
-    current = stock;
-    while (current != NULL)
-    {
-        tmp = current;
-        current = current->next;
-        free(current);    
-    }
+	current = stock;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
 }

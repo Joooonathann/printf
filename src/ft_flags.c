@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_flags(char c, Node *stock, va_list args)
+t_node	*ft_flags(char c, t_node *stock, va_list args)
 {
 	if (c == 'c')
-		stock = createNode(va_arg(args, int), stock);
+		stock = createt_node(va_arg(args, int), stock);
 	else if (c == 's')
 		stock = ft_pushstr(va_arg(args, char *), stock);
 	else if (c == 'p')
@@ -31,11 +31,11 @@ Node	*ft_flags(char c, Node *stock, va_list args)
 	else if (c == 'X')
 		stock = ft_convert(va_arg(args, unsigned int), stock, hexa_max);
 	else if (c == '%')
-		stock = createNode('%', stock);
+		stock = createt_node('%', stock);
 	else
 	{
-		stock = createNode('%', stock);
-		stock = createNode(c, stock);
+		stock = createt_node('%', stock);
+		stock = createt_node(c, stock);
 	}
 	return (stock);
 }

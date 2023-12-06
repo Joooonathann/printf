@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_stock(const char *format, va_list args)
+t_node	*ft_stock(const char *format, va_list args)
 {
-	Node	*stock;
+	t_node	*stock;
 
 	stock = NULL;
 	while (*format)
@@ -24,7 +24,7 @@ Node	*ft_stock(const char *format, va_list args)
 			stock = ft_flags(*format, stock, args);
 		}
 		else
-			stock = createNode(*format, stock);
+			stock = createt_node(*format, stock);
 		format++;
 	}
 	return (stock);

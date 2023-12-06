@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_printlist(Node *list)
+int	ft_printlist(t_node *list)
 {
-	Node	*current = list;
+	t_node	*current;
 	int		i;
 
 	i = 0;
+	current = list;
 	while (current != NULL)
 	{
 		if (ft_printchar(current->data) == -1)

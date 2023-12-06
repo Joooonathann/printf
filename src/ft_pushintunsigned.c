@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_pushintunsigned(unsigned int i, Node *stock)
+t_node	*ft_pushintunsigned(unsigned int i, t_node *stock)
 {
 	if (i > 9)
 	{
 		stock = ft_pushintunsigned(i / 10, stock);
-		stock = createNode(i % 10 + '0', stock);
+		stock = createt_node(i % 10 + '0', stock);
 	}
 	else
-		stock = createNode(i % 10 + '0', stock);
+		stock = createt_node(i % 10 + '0', stock);
 	return (stock);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   createnode.c                                       :+:      :+:    :+:   */
+/*   createt_node.c                                       :+:      :+:    :+: */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,15 +11,15 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*createNode(char data, Node *stock)
+t_node	*createt_node(char data, t_node *stock)
 {
-	Node	*new;
-	Node	*current;
+	t_node	*new;
+	t_node	*current;
 
-	new = malloc(sizeof(Node));
+	new = malloc(sizeof(t_node));
 	if (!new)
 	{
-		ft_freeStock(stock);
+		ft_freestock(stock);
 		return (NULL);
 	}
 	new->data = data;

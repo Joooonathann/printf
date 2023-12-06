@@ -11,22 +11,22 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_pushint(int i, Node *stock)
+t_node	*ft_pushint(int i, t_node *stock)
 {
 	long long	n;
 
 	n = i;
 	if (n < 0)
 	{
-		stock = createNode('-', stock);
+		stock = createt_node('-', stock);
 		n = -n;
 	}
 	if (n > 9)
 	{
 		stock = ft_pushint(n / 10, stock);
-		stock = createNode(n % 10 + '0', stock);
+		stock = createt_node(n % 10 + '0', stock);
 	}
 	else
-		stock = createNode(n % 10 + '0', stock);
+		stock = createt_node(n % 10 + '0', stock);
 	return (stock);
 }

@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_convert(unsigned int n, Node *stock, type type)
+t_node	*ft_convert(unsigned int n, t_node *stock, t_type t_type)
 {
 	int		c;
 	char	*hex;
 
 	hex = "0123456789abcdef";
 	if (n >= 16)
-		stock = ft_convert(n / 16, stock, type);
+		stock = ft_convert(n / 16, stock, t_type);
 	c = hex[n % 16];
-	if (c >= 'a' && c <= 'z' && type == hexa_max)
+	if (c >= 'a' && c <= 'z' && t_type == hexa_max)
 		c -= 32;
-	return (createNode(c, stock));
+	return (createt_node(c, stock));
 }
