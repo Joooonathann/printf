@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushstr.c                                       :+:      :+:    :+:   */
+/*   ft_convert_ptr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 10:18:40 by jalbiser          #+#    #+#             */
-/*   Updated: 2023/12/06 10:20:40 by jalbiser         ###   ########.fr       */
+/*   Created: 2023/12/06 11:36:17 by jalbiser          #+#    #+#             */
+/*   Updated: 2023/12/06 11:36:18 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_pushstr(char *str, Node *stock)
+Node	*ft_convert_ptr(unsigned long long n, Node *stock)
 {
-	while (*str)
-	{
-		stock = createNode(*str, stock);
-		str++;
-	}
-	return (stock);
+	int		c;
+	char	*hex;
+
+	hex = "0123456789abcdef";
+	if (n >= 16)
+		stock = ft_convert_ptr(n / 16, stock);
+	c = hex[n % 16];
+	return (createNode(c, stock));
 }

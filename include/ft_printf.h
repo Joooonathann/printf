@@ -24,14 +24,13 @@ typedef struct Node
 
 typedef enum    types
 {
-    pointer,
     hexa_min,
     hexa_max
 }   type;
 
 int ft_printf(const char *format, ...);
 Node	*createNode(char data, Node *stock);
-Node	*ft_convert(unsigned long long n, Node *stock, type type, int *p);
+Node	*ft_convert(unsigned int n, Node *stock, type type);
 Node	*ft_flags(char c, Node *stock, va_list args);
 int	ft_printchar(int data);
 int	ft_printlist(Node *list);
@@ -40,5 +39,6 @@ Node	*ft_pushintunsigned(unsigned int i, Node *stock);
 Node	*ft_pushstr(char *str, Node *stock);
 Node	*ft_stock(const char *format, va_list args);
 void	ft_freeStock(Node *stock);
+Node	*ft_convert_ptr(unsigned long long n, Node *stock);
 
 #endif

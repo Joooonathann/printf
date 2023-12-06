@@ -11,19 +11,14 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-Node	*ft_convert(unsigned long long n, Node *stock, type type, int *p)
+Node	*ft_convert(unsigned int n, Node *stock, type type)
 {
 	int		c;
 	char	*hex;
 
 	hex = "0123456789abcdef";
-	if (type == pointer && *p == 0)
-	{
-		stock = ft_pushstr("0x", stock);
-		*p = 1;
-	}
 	if (n >= 16)
-		stock = ft_convert(n / 16, stock, type, p);
+		stock = ft_convert(n / 16, stock, type);
 	c = hex[n % 16];
 	if (c >= 'a' && c <= 'z' && type == hexa_max)
 		c -= 32;

@@ -19,6 +19,7 @@ SRC_DIR = 	src
 SRC = 		ft_printf.c\
 			createnode.c\
 			ft_convert.c\
+			ft_convert_ptr.c\
 			ft_flags.c\
 			ft_freestock.c\
 			ft_printchar.c\

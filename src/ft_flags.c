@@ -13,23 +13,23 @@
 
 Node	*ft_flags(char c, Node *stock, va_list args)
 {
-	int	p;
-
-	p = 0;
 	if (c == 'c')
 		stock = createNode(va_arg(args, int), stock);
 	else if (c == 's')
 		stock = ft_pushstr(va_arg(args, char *), stock);
 	else if (c == 'p')
-		stock = ft_convert(va_arg(args, unsigned long long), stock, pointer, &p);
+	{
+		stock = ft_pushstr("0x", stock);
+		stock = ft_convert_ptr(va_arg(args, unsigned long long), stock);
+	}
 	else if (c == 'd' || c == 'i')
 		stock = ft_pushint(va_arg(args, int), stock);
 	else if (c == 'u')
 		stock = ft_pushintunsigned(va_arg(args, unsigned int), stock);
 	else if (c == 'x')
-		stock = ft_convert(va_arg(args, unsigned long long), stock, hexa_min, &p);
+		stock = ft_convert(va_arg(args, unsigned int), stock, hexa_min);
 	else if (c == 'X')
-		stock = ft_convert(va_arg(args, unsigned long long), stock, hexa_max, &p);
+		stock = ft_convert(va_arg(args, unsigned int), stock, hexa_max);
 	else if (c == '%')
 		stock = createNode('%', stock);
 	else
