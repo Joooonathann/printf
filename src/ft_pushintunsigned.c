@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_pushintunsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:27:23 by jalbiser          #+#    #+#             */
-/*   Updated: 2023/12/01 05:23:12 by jalbiser         ###   ########.fr       */
+/*   Created: 2023/12/06 10:11:53 by jalbiser          #+#    #+#             */
+/*   Updated: 2023/12/06 10:14:48 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-
-int	ft_printf(const char *format, ...);
-
-#endif
+Node	*ft_pushintunsigned(unsigned int i, Node *stock)
+{
+	if (i > 9)
+	{
+		stock = ft_pushintunsigned(i / 10, stock);
+		stock = createNode(i % 10 + '0', stock);
+	}
+	else
+		stock = createNode(i % 10 + '0', stock);
+	return (stock);
+}

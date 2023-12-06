@@ -10,25 +10,36 @@
 #                                                                              #
 # **************************************************************************** #
 NAME = 				libftprintf.a
-CC = 				gcc
-CFLAGS = 			-Wall -Wextra -Werror
+CC = 				cc
+INCLUDE =			include
+CFLAGS = 			-Wall -Wextra -Werror -I $(INCLUDE)
 MAKEFLAGS +=		--silent
-PRINTF_SRC_DIR = 	srcs
+SRC_DIR = 	src
 
-SRC_PRINTF = 		ft_printf.c\
+SRC = 		ft_printf.c\
+			createnode.c\
+			ft_convert.c\
+			ft_flags.c\
+			ft_freestock.c\
+			ft_printchar.c\
+			ft_printlist.c\
+			ft_pushint.c\
+			ft_pushintunsigned.c\
+			ft_pushstr.c\
+			ft_stock.c
 
-OBJ_PRINTF =		$(addprefix $(PRINTF_SRC_DIR)/, $(SRC_PRINTF:.c=.o))
+OBJ =		$(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 
 
 all: 				$(NAME)
 
-$(NAME): 			$(OBJ_PRINTF)
+$(NAME): 			$(OBJ)
 					@echo "\n🕒 Compilation en cours de $(NAME)...\n"
-					ar rcs $(NAME) $(OBJ_PRINTF)
+					ar rcs $(NAME) $(OBJ)
 					@echo "\n✅ \033[0;32mCompilation de $(NAME) effectué\033[0m\n"
 
 clean:
-					rm -f $(PRINTF_SRC_DIR)/*.o
+					rm -f $(SRC_DIR)/*.o
 
 fclean: 			clean
 					rm -f $(NAME)

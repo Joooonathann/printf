@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_pushstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalbiser <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 05:21:57 by jalbiser          #+#    #+#             */
-/*   Updated: 2023/12/01 05:23:30 by jalbiser         ###   ########.fr       */
+/*   Created: 2023/12/06 10:18:40 by jalbiser          #+#    #+#             */
+/*   Updated: 2023/12/06 10:20:40 by jalbiser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+Node	*ft_pushstr(char *str, Node *stock)
 {
-	va_list	args;
-	int		i;
-
-	i = 0;
-	va_start(args, str);
+	if (!str)
+		str = "(NULL)";
 	while (*str)
 	{
-		if (*str == '%')
-			ft_flags(*++str, args, &i);
-		else
-			i += ft_printchar(*str);
+		stock = createNode(*str, stock);
 		str++;
 	}
-	va_end(args);
-	return (i);
+	return (stock);
 }
